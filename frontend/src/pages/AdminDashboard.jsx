@@ -7,7 +7,7 @@ const AdminDashboard = () => {
 
   const fetchUsers = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/users/all');
+      const res = await axios.get(${import.meta.env.VITE_API_URL}/api/users/all);
       setUsers(res.data);
     } catch (err) {
       console.error(err);
@@ -22,7 +22,7 @@ const AdminDashboard = () => {
   const deleteUser = async (id) => {
     if (window.confirm('Bạn có chắc chắn muốn xóa người dùng này? Thao tác này không thể hoàn tác.')) {
       try {
-        await axios.delete(`http://localhost:5000/api/users/${id}`);
+        await axios.delete(import.meta.env.VITEAPIURL/api/users/{id});
         setMessage('Xóa người dùng thành công!');
         fetchUsers(); // Tải lại danh sách sau khi xóa
       } catch (err) {
