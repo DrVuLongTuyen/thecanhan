@@ -12,7 +12,7 @@ const Register = () => {
   const onSubmit = async e => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:5000/api/users/register', formData);
+      await axios.post(${import.meta.env.VITE_API_URL}/api/users/register, formData);
       setMessage('Đăng ký thành công! Đang chuyển đến trang đăng nhập...');
       setTimeout(() => navigate('/login'), 2000);
     } catch (err) {
