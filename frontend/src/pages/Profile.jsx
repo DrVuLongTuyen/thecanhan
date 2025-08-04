@@ -34,7 +34,7 @@ const Profile = () => {
     e.preventDefault();
     setMessage('');
     try {
-      await axios.put('http://localhost:5000/api/users/me', formData);
+      await axios.put(${import.meta.env.VITE_API_URL}/api/users/me, formData);
       setMessage('Cập nhật thông tin thành công!');
       loadUser(); // Tải lại thông tin user sau khi cập nhật
     } catch (err) {
